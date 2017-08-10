@@ -1,40 +1,45 @@
 
 // Methods
+
 // text
 // append
 // html
 // attr
 // css
 
-// data-esterlin
+
+// Creating your own attributes
+	// data-esterlin
 
 // jQuery Selector
-//$("body")
+	//$("body")
+
 
 
 var title = $("<h1>"); // creating elements
 
-	title.html("Hello World!!");
+	title.html("Hello World!!"); // adding contents
 
+	// Styling elements with jQuery
 	title.css({
 		"color":"red",
 		"background":"blue"
 	});
 
-	// title.text("Hello World!!!");
-
-	// title.append("Hello World!!");
-
-
-var form = $("<form>");
+	// More examples below
+		// title.text("Hello World!!!");
+		// title.append("Hello World!!");
 
 
-var firstname = $("<input>");
+var form = $("<form>"); // creating a form element
+
+
+var firstname = $("<input>");  // creating an input element
 	
-	// First
-	// firstname.attr('type', 'text');
+	// Adding only one attribute
+		// firstname.attr('type', 'text');
 
-	//. Second
+	//. Adding multiple attribute
 	firstname.attr({
 		"type":'text',
 		"name":'Esterlin',
@@ -45,42 +50,52 @@ var firstname = $("<input>");
 
 
 
-var lastname = $("<input>");
-
+var lastname = $("<input>"); // creating an input element
+	
+	// Adding more attributes
 	lastname.attr({
 		"type":'text',
 		"name":'Accime',
 		"placeholder":'lastname...',
-		"data-month": 12
+		"data-month": 12 // creating our own attributes
 	});
 
 var send = $("<button>");
 
 	send.text('Send');
 
+
+// Creating elements, break line
 var break1 = $("<br>");
 
 var break2 = $("<br>");	
 	
 
-
+// Adding elements into form element
 form.append(firstname, break1, lastname, break2, send);
 
 
 
-for(var i = 0; i < 70; i++){
 
+$("body").append(title); // adding title in the DOM
+
+
+// A for loop for 25
+for(var i = 0; i < 25; i++){
+
+	// Creating an img element
 	var img = $("<img>");
 
+		// Setting attributes
 		img.attr({
 			"src":"https://pbs.twimg.com/profile_images/873392698350239744/mv3xNgV7_400x400.jpg"
 		});
 
+	$("body").append(img); // appending the attributes into the DOM
 	
 }
 
 
-$("body").append(title);	
 
 
 
@@ -88,6 +103,9 @@ $("body").append(title);
 
 
 
+
+// Note:
+// Take the remaining as a challenge
 
 
 
