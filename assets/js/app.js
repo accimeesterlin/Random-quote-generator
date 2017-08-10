@@ -1,61 +1,130 @@
 
-// Caching the DOM
-var button = document.getElementById("button");
+// Methods
+// text
+// append
+// html
+// attr
+// css
 
-var data = ['paper','scissor', 'rock']; // array
+// data-esterlin
 
-// Global Variables
-var chances = 4;
-var win = 0;
+// jQuery Selector
+//$("body")
 
-// Declaring a function
-// Storing a function in memory
-function generate(first) {
+
+var title = $("<h1>"); // creating elements
+
+	title.html("Hello World!!");
+
+	title.css({
+		"color":"red",
+		"background":"blue"
+	});
+
+	// title.text("Hello World!!!");
+
+	// title.append("Hello World!!");
+
+
+var form = $("<form>");
+
+
+var firstname = $("<input>");
 	
-	var random = Math.floor(Math.random() * first.length);
+	// First
+	// firstname.attr('type', 'text');
 
-	var val = first[random];
+	//. Second
+	firstname.attr({
+		"type":'text',
+		"name":'Esterlin',
+		"class":'btn btn-primary',
+		"placeholder":'firstname...',
+		"data-age": 29
+	});
 
-	return val; // making the function equal to the actual value
+
+
+var lastname = $("<input>");
+
+	lastname.attr({
+		"type":'text',
+		"name":'Accime',
+		"placeholder":'lastname...',
+		"data-month": 12
+	});
+
+var send = $("<button>");
+
+	send.text('Send');
+
+var break1 = $("<br>");
+
+var break2 = $("<br>");	
+	
+
+
+form.append(firstname, break1, lastname, break2, send);
+
+
+
+for(var i = 0; i < 70; i++){
+
+	var img = $("<img>");
+
+		img.attr({
+			"src":"https://pbs.twimg.com/profile_images/873392698350239744/mv3xNgV7_400x400.jpg"
+		});
+
+	
 }
 
 
-// Declaring a function named selected
-function select() {
-
-	var result = generate(data); // invoking the generate function
-
-	console.log(result);
-  
-  	// Conditional logic
-	if(result === 'paper'){
-		chances--; // decrement things in JavaScript
-
-		if(chances <= 0){
-
-			alert("Sorry man, you lost!!!");
-
-			chances = 4; // hoisting
-		}
-
-		console.log("Chances: " + chances);
-	} else{
-		win++; // increment
-
-		if(win >= 5){
-			
-			alert("Yupeeee!, you made!!");
-
-			win = 0; // hoisting
-		}
-
-		console.log("Win: " + win);
-	}
-}
+$("body").append(title);	
 
 
 
-// Firing a click button
-button.addEventListener('click', select);
 
 
+
+
+
+
+
+
+// <h1>Hello World</h1>
+
+// 	<form>
+// 		<input type="text"> <br>
+// 		<input type="text"> <br>
+
+// 		<button>Send</button>
+
+// 	</form>
+
+
+// 	<div>
+// 		<h2>Welcome to London</h2>
+// 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+// 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+// 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+// 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+// 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+// 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+// 	</div>
+
+
+// 	<div>
+// 		<h3>Goodbye</h3>
+// 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+// 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+// 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+// 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+// 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+// 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+// 	</div>
+
+
+// 	<footer>
+// 		<p>I am Mr. footer</p>
+// 	</footer>
