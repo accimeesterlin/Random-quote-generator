@@ -1,32 +1,37 @@
-// Methods
 
-// append
-// html
-// attr
-// on
-// empty
-// css
+// var backgroundColor = [
+// 	'red',
+// 	'blue',
+// 	'orange',
+// 	'green',
+// 	'purple'
+// ]
+// $.ajax();
 
-var backgroundColor = [
-	'red',
-	'blue',
-	'orange',
-	'green',
-	'purple'
-]
+// Promises
 
+var endpoint = 'https://twitterpopularapi.herokuapp.com/api?';
 
-// Array
-var quotes = [
-	'Nothing makes the earth seem so spacious as to have friends at a distance; they make the latitudes and longitudes.',
-	'No friendship is an accident.',
-	'A good friend is like a four-leaf clover; hard to find and lucky to have',
-	'I would rather walk with a friend in the dark, than alone in the light.',
-	'Friendship marks a life even more deeply than love. Love risks degenerating into obsession, friendship is never anything but sharing.'
-];
+var params = 'q=donaldtrump&count=10';
 
+$.ajax({
+	url:endpoint + params,
+	method:'GET',
+	dataType:'jsonp'
+})
+.done(function (data) {
 
+	console.log(data);
 
+	var quotes = [];
+
+	for(var i = 0; i < data.statuses.length; i++){
+
+		quotes.push(data.statuses[i].text);
+	
+	}
+
+	console.log(quotes);
 
 
 
@@ -84,26 +89,12 @@ var quotes = [
 	});
 
 
+})
+.fail(function (err) {
 
+	console.log(err);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 
